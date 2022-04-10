@@ -2,7 +2,6 @@ package com.maisprati.projetoincubacao.service;
 
 import com.maisprati.projetoincubacao.model.Pessoa;
 
-import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
