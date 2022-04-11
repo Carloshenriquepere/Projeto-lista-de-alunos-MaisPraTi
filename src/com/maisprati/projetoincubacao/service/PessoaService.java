@@ -6,10 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class PessoaService {
 
@@ -30,7 +27,7 @@ public class PessoaService {
                         .atZone(ZoneId.systemDefault())
                         .toLocalDate();
         System.out.println("Informe a nota final se for aluno(a), Se não informe 0:");
-        var notaFinal = Long.parseLong(this.scanner.nextLine());
+        var notaFinal = (this.scanner.nextLine());
 
         var id = pessoas.values().stream()
                 .max(Comparator.comparing(Pessoa::getId))
@@ -42,7 +39,7 @@ public class PessoaService {
         } else {
             id++;
         }
-        if (notaFinal == 0) {
+        if (Objects.equals(notaFinal,  "")) {
             pessoas.put(id,
                     new Pessoa(
                             id, nome, telefone, LocalDate.now(), null,
@@ -89,10 +86,10 @@ public class PessoaService {
                             .atZone(ZoneId.systemDefault())
                             .toLocalDate();
             System.out.println("Informe a nota final se for aluno(a), Se não informe 0: ");
-            var notaFinal = Long.parseLong(this.scanner.nextLine());
+            var notaFinal = (this.scanner.nextLine());
 
             Pessoa pessoa = pessoas.get(id);
-            if (notaFinal == 0) {
+            if (Objects.equals(notaFinal, "")) {
                 Pessoa novaPessoa = new Pessoa(
                         id, nome, telefone, pessoa.getDataCadastro(), LocalDate.now(),
                         dataNascimento, null);

@@ -1,6 +1,5 @@
 package com.maisprati.projetoincubacao.model;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Pessoa extends Aluno{
@@ -12,7 +11,7 @@ public class Pessoa extends Aluno{
     private LocalDate dataUltimaAlteracao;
     private LocalDate dataNascimento;
 
-    public Pessoa(Integer id, String nome, String telefone, LocalDate dataCadastro, LocalDate dataUltimaAlteracao, LocalDate dataNascimento, Long notaFinal) {
+    public Pessoa(Integer id, String nome, String telefone, LocalDate dataCadastro, LocalDate dataUltimaAlteracao, LocalDate dataNascimento, String notaFinal) {
         super(notaFinal);
         this.id = id;
         this.nome = nome;
@@ -72,9 +71,9 @@ public class Pessoa extends Aluno{
 
     @Override
     public String toString() {
-        return " Nome: '" + nome + '\'' +
-                ", Fone: '" + telefone + '\'' +
-                ", Data de Nascimento: " + dataNascimento +
-                ", Nota final: " + getNotaFinal();
+        return " Nome: " + nome +" - "+
+                " Fone: " + telefone + " - " +
+                " Data de Nascimento: " + dataNascimento + " - " +
+                " Nota final: " + getNotaFinal();
     }
 }
